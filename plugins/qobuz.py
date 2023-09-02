@@ -19,7 +19,7 @@ from qobuz_dl.core import QobuzDL
 
 qobuz = QobuzDL(directory="qobuzdown",quality=Config.QOBUZ_QUAL,embed_art=True,smart_discography=True) # kalite 6
 qobuz.get_tokens() # get 'app_id' and 'secrets' attrs
-qobuz.initialize_client(QOBUZ_MAIL, QOBUZ_PASS, Config.qobuz.app_id, Config.qobuz.secrets)
+qobuz.initialize_client(Config.QOBUZ_MAIL, Config.QOBUZ_PASS, qobuz.app_id, qobuz.secrets)
 
 @Client.on_message(filters.command(["start", "download"]))
 def antiSpam(client: Client, message: Message):
